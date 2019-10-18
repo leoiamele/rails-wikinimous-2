@@ -1,2 +1,6 @@
-<h1>Articles#content</h1>
-<p>Find me in app/views/articles/content.html.erb</p>
+<h1>All Articles</h1>
+<%= link_to "Add new article", new_article_path %>
+<% @articles.each do |article| %>
+<h2><%= link_to article.title,  article_path(article)%></h2> 
+<p><%= article.content  %></p> 
+<% end %>
